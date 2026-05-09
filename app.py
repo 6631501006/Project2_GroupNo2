@@ -64,7 +64,7 @@ Context:
 คำถาม: {question}
 คำตอบ:"""
     resp = client.chat.completions.create(
-        model="gemma2-9b-it",
+        model="llama3-8b-8192",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
         max_tokens=800
