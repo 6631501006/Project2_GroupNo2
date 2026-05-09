@@ -66,7 +66,7 @@ Context:
         model="llama3-8b-8192",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
-        max_tokens=200
+        max_tokens=100
     )
     return resp.choices[0].message.content
 
