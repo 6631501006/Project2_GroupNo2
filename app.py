@@ -66,7 +66,7 @@ Context:
         model="llama-3.1-8b-instant",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.3,
-        max_tokens=5000
+        max_tokens=100
     )
     return resp.choices[0].message.content
 
@@ -114,7 +114,7 @@ if query:
 
     with st.chat_message("assistant"):
         with st.spinner("🔍 Searching documents..."):
-            results = db.similarity_search(query, k=3)
+            results = db.similarity_search(query, k=5)
             context = "\n\n".join([doc.page_content for doc in results])
 
         if client:
