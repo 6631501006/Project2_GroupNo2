@@ -114,7 +114,7 @@ if query:
 
     with st.chat_message("assistant"):
         with st.spinner("🔍 Searching documents..."):
-            results = db.similarity_search(query, k=25)
+            results = db.similarity_search(query, k=5)
             context = "\n\n".join([doc.page_content for doc in results])
 
         if client:
